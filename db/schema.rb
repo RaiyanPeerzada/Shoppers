@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_194214) do
+ActiveRecord::Schema.define(version: 2019_11_13_005306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 2019_11_05_194214) do
     t.decimal "price", precision: 15, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "brand"
+    t.string "image_link"
+    t.string "product_type"
   end
 
   add_foreign_key "order_items", "orders"
