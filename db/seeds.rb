@@ -30,12 +30,9 @@ products.each do |_product|
                             image_link: _product[:image_link],
                             brand: _product[:brand])
 
-  # new_product.categories = new_category[:id]
   new_product.categories << new_category
 
-  # stock_quantity: rand(1..50))
   MAX_VARIANTS.times do
-    # for a in 1..num_variants do
     new_product.variants.build(
       title: Faker::Commerce.color,
       price: Faker::Commerce.price
@@ -45,42 +42,4 @@ products.each do |_product|
   end
 end
 
-# PRODUCTS_COUNT = 100
-# MAX_CATEGORIES = 3
-
-# MAX_VARIANTS = 4
-# VARIANTS_WEIGHT = 0.53
-
-# CATEGORIES = Faker::Base.fetch_all('commerce.department').map do |title|
-#   Category.find_or_create_by!(title: title)
-# end
-
-# PRODUCTS_COUNT.times do
-#   title = ''
-
-#   # generate unique title
-#   loop do
-#     title = Faker::Commerce.product_name
-#     break unless Product.exists?(title: title)
-#   end
-
-#   product = Product.new(
-#     title: title,
-#     price: Faker::Commerce.price
-#   )
-
-#   num_categories = 1 + rand(MAX_CATEGORIES)
-#   product.categories = CATEGORIES.sample(num_categories)
-
-#   if rand > VARIANTS_WEIGHT
-#     num_variants = 1 + rand(MAX_VARIANTS)
-#     num_variants.times do
-#       product.variants.build(
-#         title: rand > VARIANTS_WEIGHT ? Faker::Commerce.color : Faker::Commerce.material,
-#         price: Faker::Commerce.price
-#       )
-#     end
-#   end
-
-#   product.save!
-# end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
