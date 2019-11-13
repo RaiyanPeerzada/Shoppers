@@ -4,7 +4,7 @@
   <% @categories.each do |category| %>
     <li>
       <%= link_to category_products_path(category) do %>
-        <%= category.title %>
+        <span style="text-transform: capitalize;"> <%= category.title %> </span>
         (<%= category.products.count %> products)
       <% end %>
     </li>
