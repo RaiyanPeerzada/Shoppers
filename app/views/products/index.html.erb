@@ -3,6 +3,10 @@
   <span style="text-transform: capitalize;"><%= @category.title %> </span> / Products
 </h2>
 
+<div class="pagination is-centered">
+    <%= paginate @products, window: 2 %>
+</div>
+
 <ol>
   <% @products.each do |product| %>
     <li>
