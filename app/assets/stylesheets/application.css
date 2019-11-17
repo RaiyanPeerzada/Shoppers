@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ #pagination{
+   width: 25%;
+ }
+
