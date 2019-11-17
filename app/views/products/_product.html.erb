@@ -1,28 +1,33 @@
 <div class="column is-one-third">
 
-  <% if image_is_link %>
-  <% if product.image.present? %>
-    <div class="card-image">
-      <figure class="image is-4by3">
-        <%= image_tag product.image %>
-      </figure>
-    </div>
-    <% else %>
+  <%# <% if image_is_link %>
+  <%# <% if product.image.present? %>
+    <%# <div class="card-image"> %>
+      <%# <figure class="image is-4by3"> %>
+        <%# <%= image_tag product.image %>
+      <%# </figure> %>
+    <%# </div> %>
+    <%# <% else %>
     <div class="card-image">
       <figure class="image is-4by3">
         <%= image_tag product.image_link %>
       </figure>
     </div>
-  <% end %>
-<% end %>
+  <%# <% end %>
+<%# <% end %>
   <div class="card product">
     <div class="card-content">
     <p class="title is-4">
-      <% if name_is_link %>
+      <%# <% if name_is_link %>
         <%= link_to product.title, product %>
-      <% else %>
-        <%= product.title %>
+        <%= form_tag order_items_path do %>
+        <%= hidden_field_tag :product_id, product.id %>
+        <%= number_field_tag :quantity, 1 %>
+        <%= submit_tag "Add to Cart" %>
       <% end %>
+      <%# <% else %>
+        <%# <%= product.title %>
+      <%# <% end %>
     </p>
     <ul>
       <li>

@@ -1,4 +1,7 @@
-<div class="columns">
+<div class="d-inline-block" id="pagination">
+  <%= paginate @all_products, window: 2 %>
+</div>
+
   <section class="section">
       <p>
         <%= link_to "Home", root_path %> -
@@ -13,7 +16,18 @@
         <%= submit_tag("Search") %>
       <% end %>
     </section>
-  <%= render partial: 'product',
-            object: @product,
-            locals: { name_is_link: false,image_is_link: true } %>
+
+<h1 class="title is-1">New Products</h1>
+<div class="columns is-multiline">
+  <%= render partial: "product", collection: @new_prod %>
+</div>
+
+<h1 class="title is-1">Recently Updated</h1>
+<div class="columns is-multiline">
+  <%= render partial: "product", collection: @recent_updates %>
+</div>
+
+<h1 class="title is-1">All Products</h1>
+<div class="columns is-multiline">
+  <%= render partial: "product", collection: @all_products %>
 </div>

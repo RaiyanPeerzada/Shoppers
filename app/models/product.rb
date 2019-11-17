@@ -8,7 +8,9 @@ class Product < ApplicationRecord
 
   has_many :variants, class_name: 'ProductVariant'
 
-  def thumbnail
-    image.variant(resize: '200x200').processed
-  end
+  mount_uploader :image, AvatarUploader
+
+  # def thumbnail
+  #   image.variant(resize: '200x200').processed
+  # end
 end

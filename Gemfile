@@ -34,6 +34,12 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem 'smarter_csv'
 gem 'formtastic', '~> 3.0'
 gem 'kaminari'
+gem "mini_magick"
+gem 'simple_form'
+gem 'carrierwave', '~> 2.0'
+gem 'figaro'
+gem 'fog'
+# gem 'imagemagick-identify', '~> 0.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

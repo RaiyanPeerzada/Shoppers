@@ -1,12 +1,27 @@
-<h2>Categories (<%= @categories.length %>)</h2>
 
+<p class="title is-3">Categories (<%= @categories.length %>)</p>
+
+<div>
 <ol>
+<div class="columns is-multiline">
   <% @categories.each do |category| %>
     <li>
+
       <%= link_to category_products_path(category) do %>
-        <span style="text-transform: capitalize;"> <%= category.title %> </span>
-        (<%= category.products.count %> products)
+
+
+        <div class="card product">
+        <div class="card-content">
+        <p class="title is-4">
+            <span style="text-transform: capitalize;"> <%= category.title %> </span>
+            (<%= category.products.count %> products)
+        </p>
+        </div>
+        </div>
+
       <% end %>
     </li>
   <% end %>
+  </div>
 </ol>
+</div>

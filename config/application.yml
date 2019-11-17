@@ -1,0 +1,4 @@
+development:
+  AWS_ACCESS_KEY_ID: "AKIAJAHJ4KW63MBKUH3Q"
+  AWS_SECRET_ACCESS_KEY: "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"
+  S3_BUCKET: "glamupshopper"
