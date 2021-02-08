@@ -36,7 +36,7 @@ gem 'formtastic', '~> 3.0'
 gem 'kaminari'
 gem "mini_magick"
 gem 'simple_form'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'figaro'
 gem 'fog'
 
